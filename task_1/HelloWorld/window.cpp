@@ -1,4 +1,6 @@
 #include "window.h"
+
+#include <QApplication>
 #include <QPushButton>
 
 Window::Window(QWidget *parent) :
@@ -10,4 +12,6 @@ Window::Window(QWidget *parent) :
  // Create and position the button
  m_button = new QPushButton("Hello World", this);
  m_button->setGeometry(10, 10, 80, 30);
+
+ connect(m_button, SIGNAL (clicked()), QApplication::instance(), SLOT (quit()));
 }
