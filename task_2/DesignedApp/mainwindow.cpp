@@ -6,6 +6,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    // setup
+    connect(ui->pushButtonExit, SIGNAL (clicked(bool)), QApplication::instance(), SLOT (quit()));
+
 }
 
 MainWindow::~MainWindow()

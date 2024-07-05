@@ -70,7 +70,7 @@
      </layout>
     </item>
     <item row="3" column="0">
-     <widget class="QPushButtonSliderIncreaser" name="pushButtonIncrease">
+     <widget class="QPushButton" name="pushButtonIncrease">
       <property name="text">
        <string>INCREASE</string>
       </property>
@@ -87,7 +87,7 @@
      </widget>
     </item>
     <item row="3" column="2">
-     <widget class="QPushButtonSliderDecreaser" name="pushButtonDecrease">
+     <widget class="QPushButton" name="pushButtonDecrease">
       <property name="text">
        <string>DECREASE</string>
       </property>
@@ -135,18 +135,6 @@
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>QPushButtonSliderIncreaser</class>
-   <extends>QPushButton</extends>
-   <header>qpushbuttonsliderincreaser.h</header>
-  </customwidget>
-  <customwidget>
-   <class>QPushButtonSliderDecreaser</class>
-   <extends>QPushButton</extends>
-   <header>qpushbuttonsliderdecreaser.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections>
   <connection>
