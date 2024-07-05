@@ -14,21 +14,33 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="maximumSize">
+    <size>
+     <width>800</width>
+     <height>559</height>
+    </size>
+   </property>
    <layout class="QGridLayout" name="gridLayout_4">
-    <item row="0" column="0">
+    <item row="4" column="0">
      <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelRed">
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
         <property name="text">
          <string>RED</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QSpinBox" name="spinBox"/>
-      </item>
       <item row="2" column="0">
-       <widget class="QSlider" name="verticalSlider">
+       <widget class="QSpinBox" name="spinBoxRed"/>
+      </item>
+      <item row="3" column="0">
+       <widget class="QSlider" name="verticalSliderRed">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
@@ -36,47 +48,78 @@
       </item>
      </layout>
     </item>
-    <item row="0" column="1">
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>GREEN</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QSpinBox" name="spinBox_2"/>
-      </item>
-      <item row="2" column="0">
-       <widget class="QSlider" name="verticalSlider_2">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="0" column="2">
+    <item row="4" column="2">
      <layout class="QGridLayout" name="gridLayout_3">
       <item row="0" column="0">
-       <widget class="QLabel" name="label_3">
+       <widget class="QLabel" name="labelBlue">
         <property name="text">
          <string>BLUE</string>
         </property>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QSpinBox" name="spinBox_3"/>
+       <widget class="QSpinBox" name="spinBoxBlue"/>
       </item>
       <item row="2" column="0">
-       <widget class="QSlider" name="verticalSlider_3">
+       <widget class="QSlider" name="verticalSliderBlue">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
        </widget>
       </item>
      </layout>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButtonSliderIncreaser" name="pushButtonIncrease">
+      <property name="text">
+       <string>INCREASE</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QSpinBox" name="spinBoxStep"/>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="pushButtonExit">
+      <property name="text">
+       <string>EXIT</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButtonSliderDecreaser" name="pushButtonDecrease">
+      <property name="text">
+       <string>DECREASE</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <item row="2" column="0">
+       <widget class="QSlider" name="verticalSliderGreen">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QSpinBox" name="spinBoxGreen"/>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="labelGreen">
+        <property name="text">
+         <string>GREEN</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="labelStep">
+      <property name="text">
+       <string>Step:</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -90,46 +133,26 @@
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusBar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QPushButtonSliderIncreaser</class>
+   <extends>QPushButton</extends>
+   <header>qpushbuttonsliderincreaser.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QPushButtonSliderDecreaser</class>
+   <extends>QPushButton</extends>
+   <header>qpushbuttonsliderdecreaser.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>
-   <sender>verticalSlider</sender>
+   <sender>verticalSliderBlue</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>spinBox</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>124</x>
-     <y>558</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>127</x>
-     <y>55</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>verticalSlider_2</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>spinBox_2</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>389</x>
-     <y>561</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>396</x>
-     <y>59</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>verticalSlider_3</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>spinBox_3</receiver>
+   <receiver>spinBoxBlue</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -138,35 +161,35 @@
     </hint>
     <hint type="destinationlabel">
      <x>651</x>
-     <y>64</y>
+     <y>149</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>spinBox</sender>
+   <sender>spinBoxBlue</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>verticalSlider</receiver>
+   <receiver>verticalSliderBlue</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>142</x>
-     <y>65</y>
+     <x>670</x>
+     <y>146</y>
     </hint>
     <hint type="destinationlabel">
-     <x>125</x>
-     <y>507</y>
+     <x>648</x>
+     <y>277</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>spinBox_2</sender>
+   <sender>spinBoxGreen</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>verticalSlider_2</receiver>
+   <receiver>verticalSliderGreen</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>414</x>
-     <y>60</y>
+     <y>145</y>
     </hint>
     <hint type="destinationlabel">
      <x>388</x>
@@ -175,18 +198,50 @@
    </hints>
   </connection>
   <connection>
-   <sender>spinBox_3</sender>
+   <sender>verticalSliderGreen</sender>
    <signal>valueChanged(int)</signal>
-   <receiver>verticalSlider_3</receiver>
+   <receiver>spinBoxGreen</receiver>
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>670</x>
-     <y>61</y>
+     <x>389</x>
+     <y>561</y>
     </hint>
     <hint type="destinationlabel">
-     <x>648</x>
-     <y>277</y>
+     <x>396</x>
+     <y>144</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxRed</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>verticalSliderRed</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>142</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>125</x>
+     <y>516</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>verticalSliderRed</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBoxRed</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>124</x>
+     <y>516</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>127</x>
+     <y>140</y>
     </hint>
    </hints>
   </connection>
